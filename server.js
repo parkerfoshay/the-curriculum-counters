@@ -1,6 +1,8 @@
 const { App } = require("@slack/bolt");
 require("dotenv").config();
 
+const { fetchNumberData } = require("./fetch.js")
+
 // Initializes your app with your bot token and signing secret
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
@@ -28,6 +30,7 @@ app.command("/skunk", async ({ command, ack, say }) => {
   }
 });
 
+fetchNumberData(56)
 (async () => {
   const port = 3000;
   // Start your app
