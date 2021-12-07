@@ -1,0 +1,15 @@
+{
+  "name": "the-curriculum-counters",
+  "version": "1.0.0",
+  "main": "src",
+  "author": "MongoDB curriculum team",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@slack/bolt": "^3.8.1",
+    "dotenv": "^10.0.0",
+    "esm": "^3.2.25"
+  }
+}
