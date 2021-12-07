@@ -19,16 +19,6 @@ export default async ({ command, ack, say }) => {
     return;
   }
 
-  // TODO: Add ability to count down if the next number is current - 1
-
-  // TODO: Add the ability to reset the count if the user enters "reset"
-
-  // TODO: Any negative numbers will set the count to that number
-
-  // TODO: If the next number is in the in the fibbonacci sequence, throw a party
-
-  // TODO: If there is an interesting fact about that number, provide a link to it
-
   // increment the count if the first argument is equal to the next number
   if (firstArgument == next) {
     count++;
