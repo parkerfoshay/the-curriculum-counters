@@ -7,6 +7,7 @@ export default async ({ command, ack, say }) => {
 
   // get the number of arguments
   const args = command.text.split(" ");
+  console.log("🚀 - request from", command.user_name, ":", command.text);
   const firstArgument = args[0] || "";
 
   // check to see if first argument is a number
