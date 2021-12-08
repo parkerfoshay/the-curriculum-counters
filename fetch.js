@@ -8,14 +8,14 @@ async function fetchNumberData(num) {
 
   const { data } = await axios.get(URL);
 
-  console.log(URLdata[rndNum]);
-  console.log(rndNum);
-  console.log(num);
-  console.log(data);
-
   return data
 }
 
-fetchNumberData(1000000);
+async function fetchSingleFact(num) {
+  let URL = `http://numbersapi.com/${num}`;
 
-module.exports = {fetchNumberData};
+  const { data } = await axios.get(URL);
+  return data
+}
+
+module.exports = {fetchNumberData, fetchSingleFact};
