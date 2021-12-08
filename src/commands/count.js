@@ -1,7 +1,7 @@
-let count = 0;
-let next = count + 1;
-
 export default async ({ command, ack, say }) => {
+  let count = 0;
+  let next = count + 1;
+
   // acknowledge the command
   ack();
 
