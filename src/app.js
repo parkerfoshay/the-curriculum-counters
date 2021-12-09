@@ -1,13 +1,20 @@
 // import client
 import { app } from "./client";
 import countCommand from "./commands/count";
-import homeCommand from "./commands/home";
+import getChannels from "./utils/getChannels";
+import messages from "./events/messages";
 
 // join the #bot-spam channel
 
-// handle when someone uses slash command `count`
+// listen for any message with the bolt package
 app.command("/count", countCommand);
-// app.command("/home", homeCommand);
+
+// Log out the channel IDs
+getChannels().then((channels) => {
+  channels.forEach((channel) => {
+    console.log(`${channel.name} - ${channel.id}`);
+  });
+});
 
 (async () => {
   // Start your app
