@@ -1,4 +1,5 @@
 import fs from "fs";
+import { app } from "../client";
 
 // NUMBER VARIABLES
 let count = 0;
@@ -13,8 +14,6 @@ const logger = (message) => {
     }
   });
 };
-
-import { app } from "../client";
 
 export default async ({ command, ack, say }) => {
   console.log("🚀 - file: count.js - line 4 - next", next);
