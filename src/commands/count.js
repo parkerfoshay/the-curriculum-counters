@@ -1,9 +1,44 @@
 import fs from "fs";
 import { app } from "../client";
+import { get, set } from "../../config/redis";
+
+// get number from redis if it exists If not, set it to 0
+// get("count")
+
+let count;
+let next;
+
+const getCurrentCount = async () => {
+  const count = await get("count");
+  if (count) {
+    return count;
+  } else {
+    return 0;
+  }
+};
+
+// set current count
+const setCurrentCount = async (count) => {
+  // make sure count is a number
+  if (typeof count === "number") {
+    await set("count", count);
+  } else {
+    console.error("count is not a number");
+  }
+  console.log("count set to: ", count);
+};
+
+const resetCount = async () => {
+  count = 0;
+  await setCurrentCount(0);
+};
 
 // NUMBER VARIABLES
-let count = 0;
-let next = count + 1;
+getCurrentCount().then((redisCount) => {
+  count = parseInt(redisCount);
+  next = count + 1;
+  console.log("🚀 - Count retrieved from redis:", count);
+});
 
 const logger = (message) => {
   console.log(message);
@@ -16,7 +51,7 @@ const logger = (message) => {
 };
 
 export default async ({ command, ack, say }) => {
-  console.log("🚀 - file: count.js - line 4 - next", next);
+  console.log("🚀 - file: count.js - next", next);
 
   // acknowledge the command
   ack();
@@ -36,13 +71,12 @@ export default async ({ command, ack, say }) => {
   }
 
   if (firstArgument == next) {
-    count++;
-    next++;
+    setCurrentCount((count += 1));
+    next += 1;
     console.log("🚀 ", next);
+    console.log("🚀  count saved in redis", count);
   } else {
-    count = 0;
-    next = count + 1;
-    say("You messed up the count :scream:!");
+    await say(`Whoops, the current count is: ${count}`);
   }
 
   // say something
@@ -58,7 +92,7 @@ export const countObserver = app.message(/^\d+/, async ({ context, say }) => {
   // check to see that the count is a valid number
   if (numberFromChat == next) {
     // if it is, increment the count
-    count++;
+    setCurrentCount((count += 1));
     next++;
     logger(`Correct number (${numberFromChat}) from chat, incrementing count`);
     console.log(`🚀 - count ${count}`);
