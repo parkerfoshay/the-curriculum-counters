@@ -1,19 +1,15 @@
 {
   "name": "the-curriculum-counters",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "main": "src",
+  "author": "MongoDB curriculum team",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@slack/bolt": "^3.8.1",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "nodemon": "^2.0.15"
+    "esm": "^3.2.25"
   }
 }
