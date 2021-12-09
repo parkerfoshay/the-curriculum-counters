@@ -1,6 +1,7 @@
+let count = 0;
+let next = count + 1;
 export default async ({ command, ack, say }) => {
-  let count = 0;
-  let next = count + 1;
+  console.log("🚀 - file: count.js - line 4 - next", next);
 
   // acknowledge the command
   ack();
@@ -23,6 +24,7 @@ export default async ({ command, ack, say }) => {
   if (firstArgument == next) {
     count++;
     next++;
+    console.log("🚀 ", next);
   } else {
     count = 0;
     next = count + 1;
