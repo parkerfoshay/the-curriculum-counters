@@ -1,0 +1,3 @@
+Correct number (1) from chat, incrementing count
+Correct number (2) from chat, incrementing count
+Correct number (3) from chat, incrementing count

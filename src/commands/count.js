@@ -1,6 +1,7 @@
 import fs from "fs";
 import { app } from "../client";
 import { get, set } from "../../config/redis";
+import { fetchNumberData } from "../utils/fetchFacts"
 
 // get number from redis if it exists If not, set it to 0
 // get("count")
@@ -98,6 +99,10 @@ export const countObserver = app.message(/^\d+/, async ({ context, say }) => {
     console.log(`🚀 - count ${count}`);
   } else {
     // if it isn't, say the current count
+    let numFact = await fetchNumberData(count);
+
     await say(`Whoops, the current count is: ${count}`);
+
+    await say(`Did you know: ${numFact}`);
   }
 });
