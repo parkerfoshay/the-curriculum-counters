@@ -34,7 +34,7 @@ Slackbot built using Node.js and the [Slack API](https://api.slack.com/). Additi
 
 ## Team
 
-- [Parker Foshay](https://github.com/parkerfoshay)
+- [Parker Faucher](https://github.com/parkerfoshay)
 - [John McCambridge](https://github.com/nol166)
 - [Julie Gauthier](https://github.com/juliegoat)
 - [Julianna Chen](https://github.com/jchenj)
