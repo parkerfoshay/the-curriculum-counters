@@ -64,7 +64,7 @@ export default async ({ command, ack, say }) => {
   // check to see if first argument is a number
   if (isNaN(firstArgument) || firstArgument === "") {
     say("The first argument must be a number");
-    say("Usage: /count <number>");
+    say("Usage: /count <number> or /fact <number>");
     say("Example: /count 5");
     say(`Current count: ${count}`);
     return;
