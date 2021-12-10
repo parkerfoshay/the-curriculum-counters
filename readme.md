@@ -16,7 +16,7 @@ The bot is designed to encourage slack members to collaborate on a very simple, 
 
 ## Usage
 
-```
+```bash
 /count [number] # Count to the given number. Provides the current count if no number is given.
 /fact [number] # Provides a fun fact about the given number.
 ```
@@ -31,3 +31,10 @@ Slackbot built using Node.js and the [Slack API](https://api.slack.com/). Additi
 - [Numbers API](https://numbersapi.com/)
 - [Redis](https://github.com/redis/node-redis) (for caching the count and allowing the count persist across restarts)
 - [Digital Ocean Droplet](https://www.digitalocean.com/) (deployment)
+
+## Team
+
+- [Parker Foshay](https://github.com/parkerfoshay)
+- [John McCambridge](https://github.com/nol166)
+- [Julie Gauthier](https://github.com/juliegoat)
+- [Julianna Chen](https://github.com/jchenj)
